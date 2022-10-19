@@ -1,0 +1,54 @@
+---
+title: "rsvp"
+format: 
+  html:
+    page-layout: custom
+server: shiny
+---
+
+```{r}
+#| panel: sidebar
+vars <- setdiff(names(iris), "Species")
+selectInput('xcol', 'X Variable', vars)
+selectInput('ycol', 'Y Variable', vars, selected = vars[[2]])
+numericInput('clusters', 'Cluster count', 3, min = 1, max = 9)
+```
+
+```{r}
+#| panel: fill
+plotOutput('plot1')
+```
+
+```{r}
+#| context: server
+selectedData <- reactive({
+    iris[, c(input$xcol, input$ycol)]
+  })
+
+clusters <- reactive({
+  kmeans(selectedData(), input$clusters)
+})
+
+output$plot1 <- renderPlot({
+  palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
+    "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
+
+  par(mar = c(5.1, 4.1, 0, 1))
+  plot(selectedData(),
+       col = clusters()$cluster,
+       pch = 20, cex = 3)
+  points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
+})
+```
+
+```{r, echo=FALSE}
+#| warning: false
+# NOTE: getting warnings of cached tokens, maybe deal with that explicitly here: https://gargle.r-lib.org/articles/non-interactive-auth.html
+books_read <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1Gi6fonQAa5Md71xMNGMVMz-lSdjBvD3IkDff1pmXpfI/')
+books_read |>
+  #filter(`Date Completed` != '2019') %>%
+  dplyr::mutate(`Date Completed` = lubridate::as_date(`Date Completed`)) |>
+  dplyr::arrange(desc(`Date Completed`)) |>
+  dplyr::select(c(`Date Completed`,Title,Author)) |>
+  knitr::kable(caption='Note: Books completed in 2019 did not have great tracking, so date is approximate')
+```

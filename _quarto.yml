@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: ""
+  favicon: 'imgs/twinkle.png'
+  google-analytics: "G-43ZRN08BLP"
+  navbar:
+    logo: 'imgs/twinkle.png'
+    logo-alt: "TBD"
+    background: primary
+    right:
+      - href: rsvp.qmd
+        text: RSVP + Potluck Signup!
+      - href: movies.qmd
+        text: Movies
+
+format:
+  html:
+    theme: 
+      - lumen
+      - styles.scss
+    toc: true
+
+
+
