@@ -12,8 +12,6 @@ website:
     right:
       - href: rsvp.qmd
         text: RSVP + Potluck Signup!
-      - href: movies.qmd
-        text: Movies
 
 format:
   html:

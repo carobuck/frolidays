@@ -1,54 +1,30 @@
 ---
-title: "rsvp"
-format: 
-  html:
-    page-layout: custom
-server: shiny
+title: ""
 ---
+::: {.column-screen-inset}
+::: {layout="[50,50]"}
+::: {.div}
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSjihGIfuhhA0LbzHvhwAOx1X9LglnEvls6IXRkRhV6gvWmw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+:::
 
-```{r}
-#| panel: sidebar
-vars <- setdiff(names(iris), "Species")
-selectInput('xcol', 'X Variable', vars)
-selectInput('ycol', 'Y Variable', vars, selected = vars[[2]])
-numericInput('clusters', 'Cluster count', 3, min = 1, max = 9)
-```
-
-```{r}
-#| panel: fill
-plotOutput('plot1')
-```
-
-```{r}
-#| context: server
-selectedData <- reactive({
-    iris[, c(input$xcol, input$ycol)]
-  })
-
-clusters <- reactive({
-  kmeans(selectedData(), input$clusters)
-})
-
-output$plot1 <- renderPlot({
-  palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
-    "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
-
-  par(mar = c(5.1, 4.1, 0, 1))
-  plot(selectedData(),
-       col = clusters()$cluster,
-       pch = 20, cex = 3)
-  points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
-})
-```
+::: {.div}
+^[please ignore that this looks janky. I'm convinced there is a better way, but I haven't found it yet]
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxMD52srF-M-_uocF3pJPbH-c7irSAwm6vgLLE7C_x55hk30ZTTn1XUqQtIvBpmT3WbkhmQzXqMoLl/pubhtml?gid=1170250138&amp;single=false&amp;widget=true&amp;headers=true"width="640" height="730" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+:::
+:::
+:::
 
 ```{r, echo=FALSE}
 #| warning: false
 # NOTE: getting warnings of cached tokens, maybe deal with that explicitly here: https://gargle.r-lib.org/articles/non-interactive-auth.html
-books_read <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1Gi6fonQAa5Md71xMNGMVMz-lSdjBvD3IkDff1pmXpfI/')
-books_read |>
+# NOTE: I'm not using this method b/c doesn't live update the google sheet that is displayed in table (google sheet only updates when the quarto doc is published and I have yet to find a way around that via htmlwidgets/gs4 pkgs/quarto)
+# instead I'll just embed a bunch of stuff via Google's HTML embed feature in their tools!
+#books_read <- googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/1YGILIWRmdfAo85zM_UbpPixkwBHdhbRXBWcV4GA_ovQ/')
+
+#books_read |>
   #filter(`Date Completed` != '2019') %>%
-  dplyr::mutate(`Date Completed` = lubridate::as_date(`Date Completed`)) |>
-  dplyr::arrange(desc(`Date Completed`)) |>
-  dplyr::select(c(`Date Completed`,Title,Author)) |>
-  knitr::kable(caption='Note: Books completed in 2019 did not have great tracking, so date is approximate')
+  #dplyr::mutate(`Date Completed` = lubridate::as_date(`Date Completed`)) |>
+  #dplyr::arrange(desc(`Date Completed`)) |>
+#  dplyr::select(c(`What are the names of people attending?`,`What dish or beverage are you bringing to share?`)) |>
+ # knitr::kable(format = 'html',caption='What everyone else is bringing:')
 ```
