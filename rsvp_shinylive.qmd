@@ -8,6 +8,7 @@ filters:
 This is a Shinylive application embedded in a Quarto doc.
 
 ```{shinylive-python}
+#| standalone: true
 
 from shiny import App, render, ui, reactive
 import matplotlib.pyplot as plt
