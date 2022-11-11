@@ -10,12 +10,17 @@ This is a Shinylive application embedded in a Quarto doc.
 ```{shinylive-python}
 #| standalone: true
 
+import micropip
+micropip.install("pygsheets")
+print('success')
+import pygsheets
+
+
 from shiny import App, render, ui, reactive
 import matplotlib.pyplot as plt
 import numpy as np
-
-import pygsheets
 import pandas as pd
+
 #authorization
 gc = pygsheets.authorize(service_file='/Users/caroline.buck/Desktop/Fun_R/shinylive-test/frolidays-8b363e98f7b9.json')
 sh = gc.open('frolidays_rsvp')
