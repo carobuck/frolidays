@@ -12,7 +12,9 @@ website:
     right:
       - href: rsvp.qmd
         text: RSVP + Potluck Signup!
-
+      - href: app.py
+        text: tester
+        
 format:
   html:
     theme: 
