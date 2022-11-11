@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: c4628263-1d7c-4759-b157-c149dc208300
+      url: 'https://frolidays.netlify.app'
