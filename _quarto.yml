@@ -12,7 +12,7 @@ website:
     right:
       - href: rsvp.qmd
         text: RSVP + Potluck Signup!
-      - href: app.py
+      - href: rsvp_shinylive.qmd
         text: tester
         
 format:
