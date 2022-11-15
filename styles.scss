@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+// fonts
+//$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
+  //FreeSerif, serif !default;
+
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap');
+//$font-family: 'Roboto Flex', sans-serif;
+//$font-family-sans-serif: "Barlow", serif !default;
+//$font-family-sans-serif: "Work Sans", serif !default
+
+// TODO: ASK MICK WHICH FONT LOOKS BETTER
+$font-family-sans-serif: "Sono", serif !default;
+//$font-family-sans-serif: "Roboto Flex", serif !default;
+
+// colors
+$body-bg: #fff;
+$body-color: #1F4252 ;
+$link-color: #00D1D8 ;
+$selection-bg: #1F4252 !default;
+
+//$background-image: url("/Users/caroline.buck/Desktop/Fun_R/rconf_preso/rconf_preso_files/imgs/R_Conf_Background_Slide.png");
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}

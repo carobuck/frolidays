@@ -1,21 +1,34 @@
 ---
-title: "frolidays"
+title: ""
 ---
+::: {.column-screen-inset}
 
-You are warmly invited to Frolidays, a.k.a. FRIEND HOLIDAYS!
+::: {layout="[50,50]"}
 
-**WHAT:** An annual tradition, born in Seattle and carried on in Cambridge. A potluck dinner party to celebrate the holidays with friends, specifically in between them all. 
+::: {div}
+![](FROLIDAYS_2022_sm.png){fig-alt="a hand lettered img that says 'frolidays holiday extravaganza'"}
+:::
+
+::: {div}
+</br></br></br>
+
+**You are warmly invited to Frolidays, a.k.a. FRIEND HOLIDAYS!**
+</br></br></br>
+**WHAT:** An annual tradition, born in Seattle and carried on in Cambridge. A potluck dinner party to celebrate the holidays with friends, right smack in the middle of the festive season
 
 **WHERE:** 150 Webster Ave #2, Cambridge MA^[Street parking is plentiful and free on Sundays]
 
 **WHEN:** Sunday, December 11th at 5pm
 
-**WHY:** Because it's fun, festive, and ya know I love a themed party and need a good group photo. 
+**WHY:** Because it's fun, festive, and ya know I love a themed party and need a good group photo
 
-**WHAT TO BRING:** 
+**WHAT TO BRING:** A dish or beverage to share + a jolly good spirit!
 
-* A story, costume, props, etc. Whatever it takes to tell us your Hallmark holiday special (you can recreate your favorite, or come up with your own). *Prizes are at stake here, people!*
-* A dish or beverage to share (as your RSVP, please sign up for what you're bringing [here])
-* A jolly good spirit!
+**WHAT TO WEAR:** Come dressed in your favorite festive attire, or as your favorite holiday. Get creative, *prizes are at stake here, people!!* If you need some inspiration, [check this out](https://www.instagram.com/reel/Ci2oIe-AlUU/?igshid=YmMyMTA2M2Y%3D)
+</br></br>
 
+**RSVP** (and sign up for what you're bringing) [here](https://docs.google.com/spreadsheets/d/12iKNmL7EOdRwXbMRpij_ez5vNjHA_gvPgU10zLQvzmA/edit?usp=sharing)^[If there's already a million bags of chips or a gazillion sugar cookies, please put on your thinking caps and bring something else :)]
 
+:::
+:::
+:::
